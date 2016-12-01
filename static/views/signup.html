@@ -1,0 +1,47 @@
+<div>
+    <div id="signup-success" class="alert alert-info hidden">
+        <strong>Success!</strong> Your account has been created. Redirecting to Login...
+    </div>
+    <div id="signup-error" class="alert alert-warning hidden">
+        <strong>Error!</strong> Your account was unable to be created 
+    </div>
+    <div id="signup-form-error" class="alert alert-warning hidden">
+        <strong>Error!</strong> Signup form is invalid
+    </div>
+    <div class="title">
+        <h1 class="lead text-center">Signup</h1>
+    </div>
+    <form id="signup-form" ng-submit="signupUser()" class="text-center">
+        <div class="form-group">
+            <label for="username">
+                <input id="username" name="username" class="form-control" type="text" placeholder="Enter username" ng-model="username" ng-change="usernameOnChange()" ng-focus="onUsernameFocus()" ng-blur="onUsernameUnfocus()" required>
+            </label>
+            <i id="username-status" class="error"></i>
+        </div>
+        
+        <div class="form-group">
+            <label for="password">
+                <input id="password" name="password" class="form-control" type="password" placeholder="Enter password" ng-model="password" ng-change="onPasswordChange()" ng-focus="onPasswordFocus()" ng-blur="onPasswordUnfocus()" required>
+            </label>
+            <i id="password-status" class="error"></i>
+        </div>
+
+        <div class="form-group">
+            <label for="confirm-password">
+                <input id="confirm-password" class="form-control" type="password" ng-model="confirmedPassword" ng-change="onConfirmedPasswordChange()" ng-focus="onConfirmedPasswordFocus()" ng-blur="onConfirmedPasswordUnfocus()" placeholder="Confirm Password" required>
+            </label>
+            <i id="confirm-password-status" class="error"></i>
+        </div>
+
+        <div class="form-group">
+            <label for="email">
+                <input id="email" class="form-control" type="email" name="email" placeholder="Enter Email" ng-model="email" ng-focus="onEmailFocus()" ng-blur="onEmailUnfocus()" ng-change="onEmailChange()" required>
+            </label>
+            <i id="email-status" class="error"></i>
+        </div>
+        
+        <div class="form-group">
+            <button id="signup-btn" class="btn" style="background: #006699; color: white" ng-disabled="!allFieldsValid()">create account</button>
+        </div>
+    </form>
+</div>

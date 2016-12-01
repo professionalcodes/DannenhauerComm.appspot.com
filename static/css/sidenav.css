@@ -1,0 +1,133 @@
+ body {
+    overflow-x: hidden;
+ }
+
+/* Toggle Styles */
+#wrapper.toggled #logo-nav {
+    width: 25%;
+    height: 100%;
+    background-color: #00091a;
+    float: left;
+    margin-top: 0;
+
+    -webkit-transition: all 1s ease-in;
+    -moz-transition: all 1s ease-in;
+    -o-transition: all 1s ease-in;
+    transition: all 1s ease-in;
+}
+
+#wrapper {
+    padding-left: 0;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+
+#sidebar-wrapper {
+    z-index: 1000;
+    position: fixed;
+    left: 250px;
+    width: 0;
+    height: 100%;
+    margin-left: -250px;
+    overflow-y: auto;
+    background: #006699;
+
+    -webkit-transition: all 0.8s ease;
+    -moz-transition: all 0.8s ease;
+    -o-transition: all 0.8s ease;
+    transition: all 0.8s ease;
+
+}
+
+#wrapper.toggled #sidebar-wrapper {
+    width: 242px;
+}
+
+#page-content-wrapper {
+    width: 100%;
+    padding: 15px;
+    -webkit-transition: all 0.8s ease;
+    -moz-transition: all 0.8s ease;
+    -o-transition: all 0.8s ease;
+}
+
+#wrapper.toggled #page-content-wrapper {
+    margin-left: 15%;
+    -webkit-transition: all 0.8s ease;
+    -moz-transition: all 0.8s ease;
+    -o-transition: all 0.8s ease;
+}
+
+
+/* Sidebar Styles */
+
+.sidebar-nav {
+    position: relative;
+    top: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    margin-top: 30%;
+}
+
+.sidebar-nav li {
+    text-indent: 20px;
+    line-height: 40px
+}
+
+.sidebar-nav li.nav-item a {
+    display: block;
+    color: white;
+    font-size: 125%;
+    margin-top: 5%;
+}
+
+.sidebar-nav li a:hover {
+
+    text-decoration: none;
+    background: #4d8bff;
+    color: #00091a;
+    -webkit-animation: fadeItOne 3s ease-in;
+    -moz-animation: fadeItOne 3s ease-in;
+    -o-animation: fadeItOne 3s ease-in;
+    animation: fadeItOne 3s ease-in;
+}
+
+.sidebar-nav li a:active,
+.sidebar-nav li a:focus {
+    text-decoration: none;
+}
+
+.sidebar-nav > .sidebar-brand {
+    height: 65px;
+    font-size: 18px;
+    line-height: 60px;
+}
+
+.sidebar-nav > .sidebar-brand a {
+    color: white;
+}
+
+.sidebar-nav > .sidebar-brand a:hover {
+    color: #fff;
+    background: none;
+}
+
+@keyframes fadeItOne {
+  0% { background-color: #FFFFFF; }
+  50% { background-color: #AD301B; }
+  100% { background-color: #FFFFFF; }
+}
+
+@keyframes fadeItTwo {
+    0% { background-color: #FFFFFF; }
+    10% {background-color: #99bdff; }
+    30% {background-color: #99bdff; }
+    40% {background-color: #1a6aff; }
+    50% { background-color: #003eb3; }
+    100% { background-color: #001233; }
+}

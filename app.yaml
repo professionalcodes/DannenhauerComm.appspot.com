@@ -1,0 +1,61 @@
+application: dannenhauercomm
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: yes
+
+handlers:
+- url: /css
+  static_dir: static/css
+
+- url: /js
+  static_dir: static/js
+
+- url: /views
+  static_dir: static/views
+
+- url: /img
+  static_dir: static/img
+
+- url: /angular
+  static_dir: static/angular-1.5.8
+
+- url: /bootstrap
+  static_dir: static/bootstrap-3.3.7-dist
+
+- url: /font-awesome 
+  static_dir: static/font-awesome-4.6.3
+
+- url: /bootstrap-social
+  static_dir: static/bootstrap-social-gh-pages
+
+- url: /img
+  static_dir: static/img
+
+- url: /sw.js
+  static_files: sw.js
+  upload: sw\.js
+  secure: always
+
+- url: /_ah/spi/.*
+  script: the_endpoint.api 
+  secure: always
+
+- url: /root
+  script: main.app
+  secure: always
+  login: admin
+
+- url: /.*
+  script: main.app
+  secure: always
+
+libraries:
+- name: webapp2
+  version: "2.5.2"
+- name: endpoints
+  version: latest
+- name: pycrypto
+  version: latest
+- name: jinja2
+  version: latest

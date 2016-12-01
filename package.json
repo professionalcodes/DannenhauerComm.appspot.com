@@ -1,0 +1,47 @@
+{
+  "name": "swdn-p2",
+  "version": "1.0.0",
+  "description": "Offline/Online Transit App Udacity",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gurujilove108/SWDN-P2.git"
+  },
+  "author": "Dylan Tucker Dannenhauer",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gurujilove108/SWDN-P2/issues"
+  },
+  "homepage": "https://github.com/gurujilove108/SWDN-P2#readme",
+  "dependencies": {
+    "babelify": "^7.3.0",
+    "browser-sync": "^2.16.0",
+    "browserify": "^13.1.0",
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-cssmin": "^0.1.7",
+    "gulp-htmlmin": "^2.0.0",
+    "gulp-if": "^2.0.1",
+    "gulp-if-else": "^1.0.3",
+    "gulp-ignore": "^2.0.1",
+    "gulp-load-plugins": "^1.3.0",
+    "gulp-ng-annotate": "^2.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-rimraf": "^0.2.0",
+    "gulp-uglify": "^2.0.0",
+    "gulp-util": "^3.0.7",
+    "hbsfy": "^2.7.0",
+    "merge-stream": "^1.0.0",
+    "rimraf": "^2.5.4",
+    "run-sequence": "^1.2.2",
+    "through2": "^2.0.1",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.7.0",
+    "yargs": "^5.0.0"
+  }
+}

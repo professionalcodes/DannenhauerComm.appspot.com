@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    {% block head %}
+        <title>{% block title %}{% endblock %}</title>
+        
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta property="og:title" content="Dannenhauer Communications">
+        <meta property="og:type" content="Data">
+        <meta property="og:description" content="Dannenhauer Communications">
+        <meta property="og:image" content="">
+        <meta property="og:site_name" content="https://dannenhauercomm.appspot.com">
+        
+        <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/bootstrap-social/bootstrap-social.css">
+    {% endblock head %}
+
+</head>
+<body>
+    <header>
+        {% if user %}
+            <h1>Header for user who is logged in</h1>
+        {% else %}
+            <h1>Header for user not logged in</h1>
+        {% endif %}  
+    </header>
+
+    {% block content %}{% endblock content %}
+    
+    <footer>
+        {% block footer %}
+            <p>&copy; Copyright 2016 by <a href="#">Dylan Dannenhauer</a></p>
+
+            <script src="/js/config.js"></script>
+            <script src="/js/utils.js"></script>
+            <script src="/js/jquery-3.1.0.min.js"></script>
+            <script src="/js/bootstrap.min.js"></script>
+
+        {% endblock footer %}
+    </footer>
+</body>
+</html>
