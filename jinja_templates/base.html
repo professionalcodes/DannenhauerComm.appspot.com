@@ -23,9 +23,13 @@
 <body>
     <header>
         {% if user %}
-            <h1>Header for user who is logged in</h1>
+            
+            {% import "header_authorized.html" as header_auth %}
+
         {% else %}
-            <h1>Header for user not logged in</h1>
+
+            {% import "header_noauthhorized.html" as header_noauth %}
+
         {% endif %}  
     </header>
 
