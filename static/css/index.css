@@ -12,6 +12,10 @@ body, html {
     display: inherit;
 }
 
+.firebase-ui-login {
+    margin-top: 5%;
+}
+
 #wrapper.toggled #menu-toggle {
     background: white;
     color: #006699;

@@ -86,6 +86,7 @@
         var indexController = new IndexController();
         indexController.setLogOnResize();
         window.ajaxController = new AjaxController();
+        angular.bootstrap(document, ["dannenhauerComm"]);
     });
 
 })()

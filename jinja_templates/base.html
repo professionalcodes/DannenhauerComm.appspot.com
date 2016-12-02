@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    
+    <title>{% block title %}{% endblock title %}</title>
 
     {% block head %}
-        <title>{% block title %}{% endblock %}</title>
-        
+
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,27 +18,24 @@
         <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
         <link rel="stylesheet" href="/bootstrap-social/bootstrap-social.css">
+
     {% endblock head %}
 
 </head>
 <body>
-    <header>
-        {% if user %}
-            
-            {% import "header_authorized.html" as header_auth %}
+    
+    {% if self.user %}
 
-        {% else %}
+    {% else %}
+        {% include 'header_noauthorized.html' %}
 
-            {% import "header_noauthhorized.html" as header_noauth %}
-
-        {% endif %}  
-    </header>
+    {% endif %}
 
     {% block content %}{% endblock content %}
     
     <footer>
         {% block footer %}
-            <p>&copy; Copyright 2016 by <a href="#">Dylan Dannenhauer</a></p>
+            <p class="text-center">&copy; Copyright 2016 by <a href="#">Dylan Dannenhauer</a></p>
 
             <script src="/js/config.js"></script>
             <script src="/js/utils.js"></script>

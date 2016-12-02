@@ -120,7 +120,7 @@ class HomePage(MainHandler):
             else:
                 self.redirect("/profile")   
         except Exception as e:
-            logging.error(str(e))
+            self.write(str(e))
 
 class LoginHandler(MainHandler):
     def post(self):
@@ -255,6 +255,23 @@ class VerificationHandler(MainHandler):
             logging.info('verification type not supported')
             self.abort(404)
 
+class TermsOfServiceTwitter(MainHandler):
+    def get():
+        self.write("terms of service")
+
+class PrivacyPolicyTwitter(MainHandler):
+    def get():
+        self.write("private policy")
+
+class AuthHandler(MainHandler):
+    def get(self):
+        logging.info(self.request)
+        self.redirect('/profile')
+
+class Proile(MainHandler):
+    def get(self):
+        self.render("profile.html")
+
 config = {}
 config['webapp2_extras.sessions'] = {
     'secret_key': 'q9m6USBZWRhoJY5R7uGTJOCWUm5WQpnU6jZU5Ta9eyvE5BEEbW5C2eSwLFMCysrYPK3dcGFAFH6SPyk2FQBHNKAv',
@@ -276,6 +293,11 @@ app = webapp2.WSGIApplication([
     ('/check_email_exists', CheckEmail),
     ('/import_token', StripeApi),
     ('/root', AdminHandler),
+    ('/root', AdminHandler),
+    ('/privacy-policy-twitter', PrivacyPolicyTwitter),
+    ('/terms-of-service-twitter', TermsOfServiceTwitter),
+    ('/_/auth/handler', AuthHandler),
+
     webapp2.Route('/<type:v|p>/<user_id:\d+>-<signup_token:.+>',
   handler=VerificationHandler, name='verification')
 

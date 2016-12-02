@@ -1,1 +1,13 @@
-<h1>not logged in</h1>
+{% macro input(name, value='', type='text') -%}
+    <input type="{{ type }}" value="{{ value|e }}" name="{{ name }}">
+    <h1>Hello world yay I love macro</h1>
+{%- endmacro %}
+
+{%- macro textarea(name, value='', rows=10, cols=40) -%}
+    <textarea name="{{ name }}" rows="{{ rows }}" cols="{{ cols
+        }}">{{ value|e }}</textarea>
+{%- endmacro %}
+
+{% macro header -%}
+    <h1>Header for users not logged in</h1>
+{% endmacro %}

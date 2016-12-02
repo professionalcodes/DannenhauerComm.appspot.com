@@ -1,12 +1,13 @@
 var dannenhauerComm = dannenhauerComm || {};
-var controllers = dannenhauerComm.controllers = angular.module('dannenhauerCommControllers', ['ngRoute']);
+dannenhauerComm.controllers = angular.module('dannenhauerCommControllers', ['ngRoute']);
+var controls = dannenhauerComm.controllers;
 
-controllers.controller('RootCtrl', ['$scope', '$location', function ($scope, $location) {
+controls.controller('RootCtrl', ['$scope', '$location', function ($scope, $location) {
   
 
 }])
 
-controller('SocialMediaLoginCtrl', ['$scope', function ($scope) {
+controls.controller('SocialMediaLoginCtrl', ['$scope', function ($scope) {
     
     $scope.google = function (argument) {
         // body...
