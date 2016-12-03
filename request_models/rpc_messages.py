@@ -1,22 +1,22 @@
 from protorpc import messages
 
-class Text(messages.Message):
-	txt = messages.StringField(1)
+# class Text(messages.Message):
+# 	txt = messages.StringField(1)
 
-class SignupFormObject(messages.Message):
-    username = messages.StringField(1)
-    password = messages.StringField(2)
-    email    = messages.StringField(3)
+# class SignupFormObject(messages.Message):
+#     username = messages.StringField(1)
+#     password = messages.StringField(2)
+#     email    = messages.StringField(3)
 
-class SignupResponse(messages.Message):
-    key = messages.StringField(1)
-    success = messages.StringField(2)
+# class SignupResponse(messages.Message):
+#     key = messages.StringField(1)
+#     success = messages.StringField(2)
 
-class Url(messages.Message):
-    url = messages.StringField(1)
+# class Url(messages.Message):
+#     url = messages.StringField(1)
 
-class UrlList(messages.Message):
-    urls = messages.MessageField(Url, 1, repeated=True)
+# class UrlList(messages.Message):
+#     urls = messages.MessageField(Url, 1, repeated=True)
 
 # class User(messages.Message):
     
