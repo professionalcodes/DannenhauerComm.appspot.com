@@ -1,21 +1,21 @@
 {
-  "name": "swdn-p2",
+  "name": "dannenhauercomm",
   "version": "1.0.0",
-  "description": "Offline/Online Transit App Udacity",
+  "description": "CommunicationsWebsite",
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gurujilove108/SWDN-P2.git"
+    "url": "git+https://github.com/professionalcodes/dannenhauercommunications.appspot.com.git"
   },
   "author": "Dylan Tucker Dannenhauer",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/gurujilove108/SWDN-P2/issues"
+    "url": "https://github.com/professionalcodes/dannenhauercommunications.appspot.com/issues"
   },
-  "homepage": "https://github.com/gurujilove108/SWDN-P2#readme",
+  "homepage": "https://github.com/professionalcodes/dannenhauercommunications.appspot.com#readme",
   "dependencies": {
     "babelify": "^7.3.0",
     "browser-sync": "^2.16.0",
