@@ -18,7 +18,7 @@ var routeConfig = function($routeProvider) {
         controller: "SignupCtrl"
     })
     .when('/login', {
-        templateUrl: "/views/login.html",
+        templateUrl: "/views/firebaseui.html",
         controller: "LoginCtrl"
     })
     .when('/faq', {
@@ -48,3 +48,50 @@ app.constant('HTTP_ERRORS', {
     'UNAUTHORIZED': 401,
     'test': 503 
 });
+
+app.factory("firebaseService", function() {
+    var config = {
+        apiKey: "AIzaSyBuZF9WPAKxCbogJysd_3BUwdvgCL2NAO4",
+        authDomain: "dannenhauercommunications.firebaseapp.com",
+        databaseURL: "https://dannenhauercommunications.firebaseio.com",
+        storageBucket: "dannenhauercommunications.appspot.com",
+        messagingSenderId: "504950093826",
+        'signInSuccessUrl': '/#/profile',
+        'signInOptions': [
+            {
+                provider: firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+                scopes: [
+                    'https://www.googleapis.com/auth/plus.login'
+                ]
+            },
+            {
+                provider: firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+                scopes: [
+                    'public_profile',
+                    'email',
+                    'user_likes',
+                    'user_friends'
+                ]
+            },
+            {
+                provider: firebase.auth.TwitterAuthProvider.PROVIDER_ID,
+            },
+            {    
+                provider: firebase.auth.GithubAuthProvider.PROVIDER_ID,
+            },
+        ]
+    };
+
+    var firebaseServiceHelper = {
+
+        loadFirebaseLoginUi: function(eid) {
+            firebase.initializeApp(config);
+            var ui = new firebaseui.auth.AuthUI(firebase.auth());
+            ui.start('#' + eid, config);
+        },
+
+    }
+
+    return firebaseServiceHelper;
+})
+

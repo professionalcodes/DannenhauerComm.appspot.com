@@ -3,24 +3,21 @@ dannenhauerComm.controllers = angular.module('dannenhauerCommControllers', ['ngR
 var controls = dannenhauerComm.controllers;
 
 controls.controller('RootCtrl', ['$scope', '$location', function ($scope, $location) {
-  
+    $scope.loghello = function() {
+        log("hello");
+    };
+}]);
 
-}])
+controls.controller('ProfileCtrl', ['$scope', function ($scope) {
 
-controls.controller('SocialMediaLoginCtrl', ['$scope', function ($scope) {
-    
-    $scope.google = function (argument) {
-        // body...
+}]);
+
+controls.controller('LoginCtrl', ['$scope', 'firebaseService', function ($scope, firebaseService) {
+       
+    $scope.loadFirebaseLoginOptions = function() {
+        firebaseService.loadFirebaseLoginUi("firebaseui-auth-container");
     };
 
-    $scope.facebook = function (argument) {
-        // body...
-    };
+    $scope.loadFirebaseLoginOptions();
 
-    $scope.github = function (argument) {
-        // body...
-    };
-
-}])
-
-
+}]);
