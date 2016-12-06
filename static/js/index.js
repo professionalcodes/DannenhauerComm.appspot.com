@@ -13,7 +13,6 @@
     jQuery(document).ready(function() {
         var indexController = new IndexController();
         indexController.setLogOnResize();
-        angular.bootstrap(document, ["dannenhauerComm"]);
     });
 
 })()

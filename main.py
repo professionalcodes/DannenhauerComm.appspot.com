@@ -55,28 +55,31 @@ class MainHandler(webapp2.RequestHandler):
 class HomePage(MainHandler):
     def get(self):
         try:
-            self.render("index.html")
+            google_user = users.get_current_user()
+            if google_user:
+                self.redirect("/profile")
+            else:
+                self.render("index.html")
         except Exception as e:
             self.write(str(e))  
 
 class Profile(MainHandler):
     def get(self):
-        self.render("profile.html")
+        google_user = users.get_current_user()
+        logging.info(google_user.user_id())
+        logging.info(google_user.email())
+        if google_user:
+            self.render("profile.html", googleurl=users.create_logout_url("/"), user=True, nickname=google_user.nickname())
+        else:
+            self.redirect("/", user=False)
+            
+class LoginHandler(MainHandler):
+    def get(self):
+        return self.render("login.html",  googleurl=users.create_login_url("/profile"))
 
 class StripeApi(MainHandler):
     def post(self):
-        token = self.request.get("token")
-        logging.info("token: %s" % token)
-        try:
-            charge = stripe.Charge.create(
-                amount=1000, # Amount in cents
-                currency="usd",
-                source=token,
-                description="Example charge")
-
-            logging.info(type(charge))
-        except stripe.error.CardError as e:
-            logging.error(str(e))
+        pass
 
 class TermsOfServiceTwitter(MainHandler):
     def get(self):
@@ -108,7 +111,11 @@ app = webapp2.WSGIApplication([
     ('/import_token', StripeApi),
     ('/privacy-policy-twitter', PrivacyPolicyTwitter),
     ('/terms-of-service-twitter', TermsOfServiceTwitter),
-    ('/_/auth/handler', AuthHandler)
+    ('/_/auth/handler', AuthHandler),
+    ('/stripeapi', StripeApi),
+    ('/login', LoginHandler),
+    ('/profile', Profile)
+
 
 ], config=config, debug=True)
         

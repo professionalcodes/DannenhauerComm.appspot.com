@@ -3,10 +3,42 @@ body, html {
 	height: 100%;
 }
 
+navbar-right input {
+    background: black;
+    color: lightgreen;
+    border-color: lightgreen
+}
+
+#navbar .navbar-nav li a {
+    color: lightgreen;
+}
+
+.welcome {
+    color: lightgreen;
+    mergin-right: 3%;
+}
+
 .summary-text {
     font-size: 130%;
     font-family: cursive;
 }
+
+.login-row {
+    margin: 0 auto;
+
+}
+
+.login-link {
+    width: 25%;
+    margin: 0 auto;
+}
+
+.custom-login li {
+    display: inline;
+    color: lightgreen;
+}
+
+.btn-submit {}
 
 .error {
     display: inherit;
